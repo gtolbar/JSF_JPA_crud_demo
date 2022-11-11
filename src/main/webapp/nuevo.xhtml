@@ -1,7 +1,8 @@
 <!DOCTYPE HTML>
 <html lang="es" xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://xmlns.jcp.org/jsf/core">
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
 <h:head>
 	<meta charset="utf-8" name="viewport"
 		content="width=device-width, initial-scale=1"
@@ -10,31 +11,31 @@
 </h:head>
 <h:body>
 		<h:form>
-		<h:panelGrid columns="2" cellspacing="20" border="1">
+		<p:panelGrid columns="2" cellspacing="20" border="1">
 			<f:facet name="header">
 				<h:outputText value="Crear cliente ✌️"></h:outputText>
 			</f:facet>
 			
 			<h:outputText value="Nombres"></h:outputText>
-			<h:inputText value="#{cliente.nombres}"></h:inputText>
+			<p:inputText value="#{cliente.nombres}"></p:inputText>
 
 			<h:outputText value="Apellidos"></h:outputText>
-			<h:inputText value="#{cliente.apellidos}"></h:inputText>
+			<p:inputText value="#{cliente.apellidos}"></p:inputText>
 
 			<h:outputText value="Direccion"></h:outputText>
-			<h:inputText value="#{cliente.direccion}"></h:inputText>
+			<p:inputText value="#{cliente.direccion}"></p:inputText>
 			
 			<h:outputText value="Email"></h:outputText>
-			<h:inputText value="#{cliente.email}"></h:inputText>
+			<p:inputText value="#{cliente.email}"></p:inputText>
 			
 			<h:outputText value="Telefono"></h:outputText>
-			<h:inputText value="#{cliente.telefono}"></h:inputText>
+			<p:inputText value="#{cliente.telefono}"></p:inputText>
 			
 			<f:facet name="footer">
-				<h:commandButton value="Crear ✅" action="#{clienteBean.guardar(cliente)}"></h:commandButton>
+				<p:commandButton  style="width: 100%;" value="Crear ✅" action="#{clienteBean.guardar(cliente)}"></p:commandButton>
 			</f:facet>
 								
-		</h:panelGrid>
+		</p:panelGrid>
 	</h:form>
 
 </h:body>
