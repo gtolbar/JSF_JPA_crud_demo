@@ -19,7 +19,7 @@ public class ClienteDAO {
 		entity.getTransaction().begin();
 		entity.persist(cliente);
 		entity.getTransaction().commit();
-		JPAUtil.shutdown();
+		//JPAUtil.shutdown();
 	}
 	
 	//Actualizar cliente
@@ -27,13 +27,13 @@ public class ClienteDAO {
 		entity.getTransaction().begin();
 		entity.merge(cliente);
 		entity.getTransaction().commit();
-		JPAUtil.shutdown();
+		//JPAUtil.shutdown();
 	}
 	
-	public Cliente buscar(int id) {
+	public Cliente buscar(Long id) {
 		Cliente c = new Cliente();
 		c=entity.find(Cliente.class, id);
-		JPAUtil.shutdown();
+		//JPAUtil.shutdown();
 		return c;
 	}
 	
@@ -42,6 +42,15 @@ public class ClienteDAO {
 		Query q = entity.createQuery("SELECT c FROM Cliente c");
 		listaClientes= q.getResultList();
 		return listaClientes;
+	}
+	
+	//eliminar cliente
+	public void eliminar(Long id) {
+		Cliente c = new Cliente();
+		c=entity.find(Cliente.class, id);
+		entity.getTransaction().begin();
+		entity.remove(c);
+		entity.getTransaction().commit();		
 	}
 	
 	
